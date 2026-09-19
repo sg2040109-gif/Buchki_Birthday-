@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+<meta name="description" content="A special birthday surprise">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#090314;color:#fff;overflow-x:hidden}
+canvas#stars{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 50% 20%,#3a145b 0,#12051f 42%,#050108 100%)}
+.glow{position:fixed;width:300px;height:300px;border-radius:50%;filter:blur(90px);opacity:.35;z-index:-1}
+.g1{background:#ff3d81;top:5%;left:-80px}.g2{background:#7c4dff;right:-100px;top:45%}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:55px 20px}
+.card{width:min(920px,100%);text-align:center}
+.badge{display:inline-block;padding:8px 15px;border:1px solid #ffffff2e;border-radius:999px;background:#ffffff10;backdrop-filter:blur(10px);font-size:13px;letter-spacing:1px}
+h1{font-size:clamp(48px,12vw,110px);line-height:.95;margin:22px 0 16px;background:linear-gradient(90deg,#fff,#ff9ac1,#d4b4ff,#fff);-webkit-background-clip:text;color:transparent}
+.subtitle{font-size:clamp(18px,4vw,27px);color:#f5ddea;max-width:700px;margin:auto;line-height:1.5}
+.btn{display:inline-block;margin-top:30px;padding:14px 24px;border-radius:999px;background:linear-gradient(90deg,#ff3d81,#9c5cff);color:#fff;text-decoration:none;font-weight:700;box-shadow:0 10px 35px #ff3d8140;cursor:pointer;border:0;font-size:16px}
+.heart{font-size:64px;animation:pulse 1.5s infinite;display:block;margin-top:25px}
+@keyframes pulse{50%{transform:scale(1.18)}}
+.reveal{opacity:0;transform:translateY(35px);transition:1s}.reveal.show{opacity:1;transform:none}
+.message{background:#ffffff0d;border:1px solid #ffffff18;border-radius:28px;padding:35px;backdrop-filter:blur(15px);box-shadow:0 20px 80px #0008}
+.message p{font-size:19px;line-height:1.9;color:#f7eefa}
+.highlight{color:#ff9fc4;font-weight:800}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+.gallery div{aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,#ff4c8b33,#8c5cff33);border:1px dashed #ffffff38;display:flex;align-items:center;justify-content:center;color:#cdb9d8;padding:15px}
+@media(max-width:650px){.gallery{grid-template-columns:1fr}.message{padding:25px}.gallery div{aspect-ratio:1.4}}
+.count{font-size:clamp(40px,10vw,75px);font-weight:800;margin:20px 0;background:linear-gradient(90deg,#ffd1e2,#c9b7ff);-webkit-background-clip:text;color:transparent}
+.qrbox{display:inline-block;background:#fff;padding:15px;border-radius:20px;margin-top:25px}
+.qrbox img{width:190px;height:190px;display:block}
+.small{font-size:13px;color:#bcaac5;margin-top:14px}
+footer{text-align:center;padding:30px;color:#9e8ca9;font-size:13px}
+#musicBtn{position:fixed;right:18px;bottom:18px;z-index:10;width:52px;height:52px;border-radius:50%;border:1px solid #fff3;background:#ffffff18;color:#fff;font-size:20px;backdrop-filter:blur(12px)}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas><div class="glow g1"></div><div class="glow g2"></div>
+
+<section>
+<div class="card">
+<span class="badge">19 SEPTEMBER • A LITTLE SURPRISE JUST FOR YOU ✨</span>
+<div class="heart">❤️</div>
+<h1>Happy Birthday,<br><span id="personName">My Special Person</span></h1>
+<p class="subtitle">19 September — aaj ka din sirf tumhare naam… because you deserve a little extra magic. 🎂✨</p>
+<a class="btn" href="#letter">Open Your Surprise 💌</a>
+</div>
+</section>
+
+<section id="letter">
+<div class="card reveal">
+<div class="message">
+<span class="badge">A LETTER FOR YOU 💌</span>
+<h2 style="font-size:36px;margin:20px 0">To the person who makes life brighter ❤️</h2>
+<p>
+Tum meri life ke un special logon mein se ho jinke liye words kabhi-kabhi kam pad jaate hain.
+Aaj tumhara birthday hai, isliye bas itna kehna hai —
+<strong class="highlight">hamesha smile karna, khush rehna aur apne dreams ko kabhi chhodna mat.</strong>
+<br><br>
+I hope tumhari life mein har naya saal pichhle saal se zyada beautiful ho.
+May you get lots of happiness, success, peace and countless reasons to smile.
+<br><br>
+<strong>Happy Birthday! 🎂💖</strong>
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="card reveal">
+<span class="badge">YOUR SPECIAL MEMORIES 📸</span>
+<h2 style="font-size:42px;margin:20px 0">Moments worth keeping</h2>
+<div class="gallery">
+<div>📷 Add your favourite photo here</div>
+<div>💫 Add another memory here</div>
+<div>❤️ Add one more special photo here</div>
+</div>
+<p class="small">Tip: replace these boxes with your photos in the HTML.</p>
+</div>
+</section>
+
+<section>
+<div class="card reveal">
+<span class="badge">MAKE A WISH 🎂</span>
+<h2 style="font-size:42px;margin:20px 0">Your next chapter starts now</h2>
+<div class="count" id="wish">✨ 3 • 2 • 1 ✨</div>
+<p class="subtitle">Close your eyes, make a wish… and smile. The best moments are still waiting for you.</p>
+<button class="btn" onclick="celebrate()">Celebrate! 🎉</button>
+</div>
+</section>
+
+<section>
+<div class="card reveal">
+<span class="badge">SCAN THIS FOR THE SURPRISE 📱</span>
+<h2 style="font-size:40px;margin:20px 0">Birthday QR Code</h2>
+<p class="subtitle">Upload this website online, then set its URL below to create the final QR code.</p>
+<div class="qrbox"><img id="qr" alt="Birthday QR Code"></div>
+<p class="small">Current demo URL: example.com — replace it with your live website URL in the script.</p>
+</div>
+</section>
+
+<footer>Made with ❤️ for someone truly special.</footer>
+<button id="musicBtn" onclick="toggleMusic()" aria-label="Music">🔊</button>
+<audio id="music" loop>
+  <!-- Add your own MP3 file as birthday.mp3 in this folder -->
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* ================= PERSONALIZE HERE ================= */
+const CONFIG = {
+  name: "Buchki",
+  websiteUrl: "https://example.com"
+};
+/* ==================================================== */
+
+document.getElementById("personName").textContent = CONFIG.name;
+document.getElementById("qr").src =
+  "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=" +
+  encodeURIComponent(CONFIG.websiteUrl);
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+function celebrate(){
+  const w=document.getElementById("wish");
+  let n=3; w.textContent="✨ "+n;
+  const timer=setInterval(()=>{
+    n--;
+    if(n>0) w.textContent="✨ "+n;
+    else {clearInterval(timer); w.textContent="🎉 HAPPY BIRTHDAY! 🎉"; fireworks();}
+  },800);
+}
+function fireworks(){
+  for(let i=0;i<70;i++){
+    const s=document.createElement("span");
+    s.textContent=["✨","💖","🎉","⭐","💫"][Math.floor(Math.random()*5)];
+    s.style.position="fixed";s.style.left=(Math.random()*100)+"vw";s.style.top=(Math.random()*70+10)+"vh";
+    s.style.fontSize=(14+Math.random()*25)+"px";s.style.zIndex=20;
+    s.style.transition="1.6s ease-out";
+    document.body.appendChild(s);
+    requestAnimationFrame(()=>{s.style.transform=`translate(${(Math.random()-.5)*180}px,${(Math.random()-.5)*220}px) rotate(${Math.random()*360}deg)`;s.style.opacity=0});
+    setTimeout(()=>s.remove(),1700);
+  }
+}
+function toggleMusic(){
+  const m=document.getElementById("music");
+  if(m.paused){m.play().catch(()=>{});document.getElementById("musicBtn").textContent="⏸️"}
+  else{m.pause();document.getElementById("musicBtn").textContent="🔊"}
+}
+
+/* star background */
+const c=document.getElementById("stars"),x=c.getContext("2d");
+function resize(){c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;x.scale(devicePixelRatio,devicePixelRatio)}
+resize();addEventListener("resize",resize);
+let stars=Array.from({length:130},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+.2,s:Math.random()*.25+.05}));
+function draw(){
+  x.clearRect(0,0,innerWidth,innerHeight);x.fillStyle="white";
+  stars.forEach(s=>{s.y-=s.s;if(s.y<0)s.y=innerHeight;x.globalAlpha=.25+Math.random()*.65;x.beginPath();x.arc(s.x,s.y,s.r,0,Math.PI*2);x.fill()});
+  requestAnimationFrame(draw)
+}draw();
+</script>
+</body>
+</html>
